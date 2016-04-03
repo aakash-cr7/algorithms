@@ -7,7 +7,7 @@ bool binarySearchIterative(int *a, int length, int item_to_find) {
     int mid;
 
     while(leftPos <= rightPos) {
-        mid = (leftPos + rightPos) / 2; // finding middle index
+        mid = leftPos + (rightPos - leftPos) / 2; // finding middle index
         if(a[mid] == item_to_find) {
             return true;
         }
@@ -23,7 +23,7 @@ bool binarySearchIterative(int *a, int length, int item_to_find) {
 bool binarySearchRecursive(int *a, int left, int right, int item_to_find) {
     int mid;
     if(left <= right) {
-        mid = left + right / 2; // finding middle index
+        mid = left + (right - left) / 2; // finding middle index
         if(a[mid] == item_to_find) {
             return true;
         } else if(item_to_find < a[mid]) {
