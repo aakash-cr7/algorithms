@@ -6,9 +6,10 @@ Implementation of various Data Structures and Algorithms. I'll keep on adding mo
 * Insertion Sort
 * Selection Sort
 * Counting Sort
+* Merge Sort
 
 ### Searching
-* Binary Search (both reursively and iteratively)
+* Binary Search (both recursively and iteratively)
 * Linear Search
 
 ### Data Structures
