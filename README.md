@@ -13,5 +13,6 @@ Implementation of various Data Structures and Algorithms. I'll keep on adding mo
 * Linear Search
 
 ### Data Structures
+* Linked Lists
 
 
