@@ -140,7 +140,7 @@ class SingleLinkedList {
     friend ostream & operator<<(ostream &, const SingleLinkedList &);
     friend void radixSort(SingleLinkedList &);
 
-    /* Helper functions for Radix sort **/
+    /** Helper functions for Radix sort **/
 
     // Function to REMOVE(not delete) the element from head and return that element
     Node * softDeleteFromHead() {
@@ -195,7 +195,7 @@ void radixSort(SingleLinkedList & L) {
         }
         it = it->next;
     }
-    // if a -ve number is present, subtract the least -ve number from all number than sort them
+    // Setting offset, if a -ve number is present subtract the least -ve number from all number than sort them
     if(min < 0) {
         it = L.head;
         while(it) {
@@ -204,19 +204,22 @@ void radixSort(SingleLinkedList & L) {
         }
         max -= min;
     }
-    // variable to store how many passes we have to make
+    // Finding total number of digits in max, variable to store how many passes we have to make
     int totalrounds = 0;
     while(max > 0) {
         totalrounds++;
         max = max/10;
     }
+    // creating buckets from 0 to 9
     SingleLinkedList buckets[10];
     int k = 1;
     for(int i = 0; i < totalrounds; i++) {
+        // filling the buckets
         while(!L.isEmpty()) {
             Node * temp = L.softDeleteFromHead();
             buckets[(temp->data/k) % 10].insertAtTheEnd(temp);
         }
+        // remove elements one by one from buckets, from 0 to 9
         for(int j = 0; j < 10; j++) {
             while(!buckets[j].isEmpty()) {
                 Node * temp = buckets[j].softDeleteFromHead();
