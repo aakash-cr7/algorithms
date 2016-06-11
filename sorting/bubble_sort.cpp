@@ -35,7 +35,7 @@ void bubbleSort(int *a, int len) {
  */
 void bubbleSortImproved(int *a, int len) {
     for(int i = 0; i < len - 1; i++) {
-        flag = 1;
+        flag = 0;
         // Last i elements will already be sorted
         for(int j = 0; j < len - i - 1; j++) {
             if(a[j] > a[j + 1]) {
@@ -43,7 +43,7 @@ void bubbleSortImproved(int *a, int len) {
                 flag = 1;
             }
         }
-        if (flag == 0) break;
+        if (flag == 0) break; // If the array is already sorted, break to avoid firther iterations
     }
 }
 int main() {
